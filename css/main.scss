@@ -1,0 +1,166 @@
+// COMMON
+body {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #333;
+  box-sizing: border-box;
+}
+a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+.btn {
+  width: 150px;
+  height: 50px;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+}
+.btn--twitch {
+  background-color: rgba($color: #6441a5, $alpha: 0.3);
+  &:hover { 
+    background-color: #6441a5;
+    transition: all .4s;
+  }
+}
+.btn--youtube {
+  background-color: rgba($color: #c4302b, $alpha: 0.3);
+  &:hover { 
+    background-color: #c4302b;
+    transition: all .4s;
+  }
+}
+.btn--community {
+  background-color: rgba($color: #2db400, $alpha: 0.3);
+  &:hover { 
+    background-color: #2db400;
+    transition: all .4s;
+  }
+}
+
+// HEADER AND NAV
+header {
+  z-index: 1;
+  background-color: rgba($color: #ffffff, $alpha: 0.3);
+  width: 100vw;
+  min-width: 1920px;
+  position: fixed;
+  nav {
+    position: relative;
+    height: 100px;
+    ul {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 50px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      li {
+        text-align: center;
+        width: 150px;
+        &:hover {
+          opacity: 0.7;
+          transform: scale(1.1);
+          transition: all .4s; 
+        }
+        a {
+          font-size: 24px;
+          font-weight: 700;
+          padding: 20px 0;
+        }
+        div.material-icons {
+          cursor: pointer;
+          font-size: 30px;
+          padding: 20px 30px;
+        }
+      }
+    }
+  }
+}
+
+// SECTION KIM JA DDOL
+section {
+  .inner {
+    height: 100vh;
+    min-height: 100%;
+    background-image: url("../images/twitch_logo_2.png");
+    padding: 200px 300px 0;
+    box-sizing: border-box;
+    .image_wrap{
+      perspective:1000px;
+      div.front, 
+      div.back {
+          width: 500px;
+          height: 500px;
+          position: absolute;
+          backface-visibility: hidden;
+          transition: 1s;
+      }
+      div.front {
+        transform: rotateY(0deg);
+      }
+      div.back {
+        transform: rotateY(-180deg);
+      }
+      &:hover .front {
+        transform: rotateY(180deg);
+      }
+      &:hover .back {
+        transform: rotateY(0deg);
+      }
+    }
+    div.text_area {
+      width: 800px;
+      position: absolute;
+      right:250px;
+      text-align: center;
+      & h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin: 10px 0;
+        color: #fff;
+        -webkit-text-stroke: 1px #000;
+      }
+      & p {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 30px 0;
+      }
+      .link_in {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        a {
+          margin: 20px 20px;
+          font-weight: 700;
+        }
+      }
+      .ifram_in{
+          display: flex;
+          justify-content: space-around;
+        iframe {
+          margin-top: 20px;
+        }
+      }
+    }
+  &.kim_option {
+    background-color: #FF69B4;
+    color: #fff;
+  }
+  &.ja_option {
+    background-color: #FFFF99;
+    color: #333;
+  }
+  &.ddol_option {
+    background-color: #6441a5;
+    color: #fff;
+  }
+  }
+}
